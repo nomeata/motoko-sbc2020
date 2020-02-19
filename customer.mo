@@ -10,7 +10,7 @@ let my_customer = {
 type Customer = {
     first_name : Text;
     last_name : Text;
-    status : { #standard; #premium }
+    status : { #standard; #premium : { until : Nat }; #lifetime }
 };
 
 func full_name({first_name : Text; last_name : Text}) : Text {
@@ -25,8 +25,11 @@ func status_report(customer : Customer) : Text {
         case (#standard) {
             report #= "standard tier";
         };
-        case (#premium) {
-            report #= "premium tier";
+        case (#premium {until}) {
+            report #= "premium tier (until year " # Nat.toText(until) # ")";
+        };
+        case (#lifetime) {
+            report #= "lifetime tier";
         };
     };
     return report

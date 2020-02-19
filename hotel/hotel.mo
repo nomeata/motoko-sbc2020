@@ -1,6 +1,13 @@
 actor hotel {
+    var rate = 100;
+
+    public func setRate(newRate : Nat) {
+	    rate := newRate;
+    };
+
+
     public func getRate(location : Text) : async Nat {
-	    return 110;
+	    return rate;
     };
 
     public func registerWith(agencyUrl : Text) {

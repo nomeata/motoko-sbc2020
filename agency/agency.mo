@@ -21,7 +21,8 @@ actor TravelAgency {
         var rates : [Nat] = [];
         // ask all hotels
         for (h in hotels.vals()) {
-            rates := Array.append<Nat>(rates, [await h.getRate(location)])
+            let rate = await h.getRate(location);
+            rates := Array.append<Nat>(rates, [rate]);
         };
         let rate = Utils.minimum(rates);
         switch (discounts.get(caller)) {

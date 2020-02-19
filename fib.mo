@@ -7,5 +7,5 @@ while (i > 0) {
     fac *= i; i -= 1;
 };
 
-Debug.print(Nat.toText(fac))   
+Debug.print(Nat.toText(fac))
 
