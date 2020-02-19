@@ -1,0 +1,19 @@
+{
+  "canisters": {
+    "agency": {
+      "main": "agency.mo"
+    }
+  },
+  "defaults": {
+    "build": {
+      "output": "canisters/"
+    },
+    "start": {
+      "address": "127.0.0.1",
+      "port": 8000,
+      "serve_root": "canisters/foo/assets"
+    }
+  },
+  "dfx": "0.5.1",
+  "version": 1
+}

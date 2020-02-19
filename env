@@ -1,0 +1,2 @@
+alias moc="moc --package stdlib ~/dfinity/motoko/stdlib/src/ -wasi-system-api"
+
