@@ -5,9 +5,9 @@
 # dfx start
 
 
-alias moc="moc --package stdlib ~/dfinity/motoko/stdlib/src/ -wasi-system-api"
+alias moc="moc --package stdlib ~/dfinity/motoko/stdlib/src/"
 export PS1='[SBC] \W $ '
-history -s "moc fib.mo"
+history -s "moc -wasi-system-api fib.mo"
 history -s "wasmtime fib.mo"
 history -s "dfx start --background"
 history -s "dfx build && dfx canister install --all"
