@@ -1,14 +1,14 @@
 # prep:
 # rm *.wasm
-# open code -n with fib, customers, agency, bad-async
+# open code -n with factorial, customers, agency, bad-async
 # open terminals, load env, hide bar
 # dfx start
 
 
 alias moc="moc --package stdlib ~/dfinity/motoko/stdlib/src/"
 export PS1='[SBC] \W $ '
-history -s "moc -wasi-system-api fib.mo"
-history -s "wasmtime fib.wasm"
+history -s "moc -wasi-system-api factorial.mo"
+history -s "wasmtime factorial.wasm"
 history -s "dfx start --background"
 history -s "dfx build && dfx canister install --all"
 history -s "dfx canister call hotel registerWith --type string ic:6B3EB532623AC12E30"
