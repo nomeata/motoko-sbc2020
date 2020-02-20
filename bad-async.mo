@@ -1,17 +1,13 @@
-actor canister { 
-    public func getNat() : async Nat { 0 };
+actor self { 
+    var x : [async ()] = [];
 
-    var x : [async Nat] = [];
-
-    public func foo() : async Nat {
-        let a : async Nat = canister.getNat();
+    public func foo() : async () {
+        let a = self.bar();
         x := [a];
-        let r = await a;
-        return r + 1;
-     };
+        await a;
+    };
 
-    public func bar() : async Nat {
-        let r = await x[0];
-        return r + 2;
+    public func bar() : async () {
+        await x[0];
     };
 }

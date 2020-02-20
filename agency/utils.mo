@@ -7,7 +7,7 @@ import TrieMap "mo:stdlib/trieMap";
 
 module {
     public func emptyMap() : TrieMap.TrieMap<Principal,Nat> {
-        TrieMap.TrieMap<Principal,Nat>(func (x,y) { Principal.hash x == Principal.hash y }, Principal.hash);
+        TrieMap.TrieMap<Principal,Nat>(func (x,y) { x == y }, Principal.hash);
     };
 
     public func minimum (xs : [Nat]) : Nat {
