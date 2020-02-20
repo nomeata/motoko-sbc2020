@@ -13,8 +13,9 @@ actor TravelAgency {
 
     var discounts : TrieMap.TrieMap<Principal,Nat> = Utils.emptyMap();
 
-    public func registerHotel(h : Hotel) {
+    public func registerHotel(h : Hotel) : async Nat {
         hotels := Array.append<Hotel>(hotels, [h]);
+        return hotels.len();
     };
     
     public shared{caller} func getBestRate(location: Text) : async Nat {

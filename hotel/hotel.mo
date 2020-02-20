@@ -1,3 +1,4 @@
+import Nat "mo:stdlib/nat";
 actor hotel {
     var rate = 100;
 
@@ -10,8 +11,9 @@ actor hotel {
 	    return rate;
     };
 
-    public func registerWith(agencyUrl : Text) {
-        let a = actor(agencyUrl) : actor { registerHotel : (actor{}) -> () };
-        a.registerHotel(hotel);
+    public func registerWith(agencyUrl : Text) : async Text {
+        let a = actor(agencyUrl) : actor { registerHotel : (actor{}) -> async Nat };
+        let n = await a.registerHotel(hotel);
+	"Successfully registered as hotel no. " # Nat.toText n # ".";
     }
 };
