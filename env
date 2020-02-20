@@ -12,6 +12,6 @@ history -s "wasmtime fib.mo"
 history -s "dfx start --background"
 history -s "dfx build && dfx canister install --all"
 history -s "dfx build && dfx canister install --all && dfx canister call hotel registerWith --type string ic:6B3EB532623AC12E30"
-history -s "dfx canister call hotel setRate '(120)'"
+history -s "dfx canister call hotel setRate '(80)'"
 history -s "dfx canister call agency getRate '(\"Palo Alto\")'"
 
