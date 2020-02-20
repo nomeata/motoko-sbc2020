@@ -14,7 +14,7 @@ type Customer = {
 };
 
 func status_report(customer : Customer) : Text {
-    var report = "Loyality status of ";
+    var report = "Loyalty status of ";
     report #= full_name(customer);
     report #= ": ";
     switch (customer.status) {
