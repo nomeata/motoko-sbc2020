@@ -4,7 +4,7 @@ actor canister {
     var x : [async Nat] = [];
 
     public func foo1() : async Nat {
-        let a = canister.getNat();
+        let a : async Nat = canister.getNat();
         x := [a];
         let r = await a;
         return r + 1;

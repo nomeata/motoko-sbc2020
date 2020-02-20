@@ -17,7 +17,7 @@ actor TravelAgency {
         hotels := Array.append<Hotel>(hotels, [h]);
     };
     
-    public shared{caller} func getRate(location: Text) : async Nat {
+    public shared{caller} func getBestRate(location: Text) : async Nat {
         var rates : [Nat] = [];
         // ask all hotels
         for (h in hotels.vals()) {
