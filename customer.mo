@@ -1,7 +1,7 @@
 import Debug "mo:stdlib/debug";
 import Nat "mo:stdlib/nat";
 
-let my_customer = {
+let customer_joe = {
     first_name = "John";
     last_name = "Doe";
     status = #standard;

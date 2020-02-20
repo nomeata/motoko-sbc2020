@@ -18,7 +18,7 @@ actor TravelAgency {
         return hotels.len();
     };
     
-    public shared{caller} func getBestRate(location: Text) : async Nat {
+    public shared(msg) func getBestRate(location: Text) : async Nat {
         var rates : [Nat] = [];
         // ask all hotels
         for (h in hotels.vals()) {
@@ -26,7 +26,7 @@ actor TravelAgency {
             rates := Array.append<Nat>(rates, [rate]);
         };
         let rate = Utils.minimum(rates);
-        switch (discounts.get(caller)) {
+        switch (discounts.get(msg.caller)) {
             case null rate;
             case (?d) (rate * (100 - d) / 100);
         }
