@@ -29,6 +29,6 @@ actor TravelAgency {
         switch (discounts.get(msg.caller)) {
             case null { return rate; };
             case (?d) { return (rate * (100 - d) / 100); };
-        }
+        };
     };
 };
