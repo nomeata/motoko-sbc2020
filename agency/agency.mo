@@ -27,8 +27,8 @@ actor TravelAgency {
         };
         let rate = Utils.minimum(rates);
         switch (discounts.get(msg.caller)) {
-            case null rate;
-            case (?d) (rate * (100 - d) / 100);
+            case null { return rate; };
+            case (?d) { return (rate * (100 - d) / 100); };
         }
     };
 };

@@ -2,7 +2,7 @@ actor self {
     var x : [async ()] = [];
 
     public func foo() : async () {
-        let a = self.bar();
+        let a : async () = self.bar();
         x := [a];
         await a;
     };
